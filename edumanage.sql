@@ -149,6 +149,40 @@ INSERT INTO `kalender` (`tanggal`, `kegiatan`, `keterangan`) VALUES
 ('2025-05-29', 'Kenaikan Yesus Kristus', 'Libur Nasional'),
 ('2025-06-01', 'Hari Lahir Pancasila', 'Libur Nasional');
 
+-- --------------------------------------------------------
+-- Tabel: profil_sekolah
+-- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `profil_sekolah` (
+  `id`               INT AUTO_INCREMENT PRIMARY KEY,
+  `nama_sekolah`     VARCHAR(200) NOT NULL DEFAULT 'SMK Telkom',
+  `npsn`             VARCHAR(20)  DEFAULT '12345678',
+  `jenis_sekolah`    VARCHAR(50)  DEFAULT 'SMK',
+  `akreditasi`       VARCHAR(30)  DEFAULT 'A (Unggul)',
+  `tahun_berdiri`    VARCHAR(10)  DEFAULT '1990',
+  `kurikulum`        VARCHAR(100) DEFAULT 'Merdeka Belajar',
+  `alamat`           TEXT,
+  `telepon`          VARCHAR(30)  DEFAULT '',
+  `fax`              VARCHAR(30)  DEFAULT '',
+  `email`            VARCHAR(100) DEFAULT '',
+  `website`          VARCHAR(150) DEFAULT '',
+  `jam_operasional`  VARCHAR(100) DEFAULT 'Senin–Jumat, 07.00–15.00',
+  `visi`             TEXT,
+  `misi`             TEXT,
+  `updated_at`       TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- Data awal profil sekolah
+INSERT INTO `profil_sekolah`
+  (nama_sekolah, npsn, jenis_sekolah, akreditasi, tahun_berdiri, kurikulum,
+   alamat, telepon, fax, email, website, jam_operasional, visi, misi)
+VALUES
+  ('SMK Telkom','12345678','SMK','A (Unggul)','1990','Merdeka Belajar',
+   'Jl. Pendidikan No. 1, Kel. Maju, Kec. Jaya, Kota Contoh',
+   '(021) 1234-5678','(021) 1234-5679','info@smkn-contoh.sch.id',
+   'www.smkn-contoh.sch.id','Senin–Jumat, 07.00–15.00',
+   'Menjadi sekolah kejuruan terdepan yang menghasilkan lulusan berkarakter, kompeten, berdaya saing global, dan berwawasan teknologi pada tahun 2030.',
+   'Menyelenggarakan pendidikan berkualitas berbasis kompetensi kejuruan.\nMengembangkan karakter siswa yang beriman, berakhlak mulia, dan berdisiplin.\nMembangun kemitraan dengan dunia usaha dan industri.\nMendorong inovasi pembelajaran berbasis teknologi digital.\nMewujudkan lingkungan belajar yang aman, nyaman, dan kondusif.');
+
 -- ============================================================
 -- CATATAN PASSWORD:
 -- admin   -> password: admin123
